@@ -13,6 +13,7 @@ Les tests fournis doivent passer **sans modification**.
 ```
 calculator-project/
 ├─ pyproject.toml
+├─LICENCE
 ├─ src/
 │  └─ calculator/
 │     ├─ __init__.py
@@ -107,7 +108,7 @@ Division de deux entiers.
 - `n / 0` → `ZeroDivisionError`
 - Types invalides → `TypeError`
 
----
+
 
 ## Contraintes de style
 
@@ -116,29 +117,27 @@ Division de deux entiers.
 - Docstrings pour toutes les méthodes
 - Séparation claire du projet :
 
-```
-project_root/
-├── src/
-│   └── simple_calculator/
-│       └── calculator.py
-├── tests/
-│   └── test_calculator.py
-└── pyproject.toml
-```
 
----
 
-## `pyproject.toml` minimal
 
+
+## `pyproject.toml` mon choix perso
 ```toml
 [project]
-name = "simple-calculator"
-version = "0.1.0"
-description = "A strictly typed simple calculator"
-authors = [{ name = "Your Name" }]
+name = "TestSimpleCalculator_2026_FJ"
+version = "0.0.1"
+authors = [{name = "Fabrice Jumel"}]
+description = "Simple calculator for packaging demo"
+license = {text = "Unlicense"}
 requires-python = ">=3.10"
 
-[build-system]
-requires = ["setuptools"]
-build-backend = "setuptools.build_meta"
+[project.optional-dependencies]
+test = ["pytest>=7.0", "pytest-cov", "pylint", "black", "radon"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
 ```
