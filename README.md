@@ -141,3 +141,25 @@ where = ["src"]
 testpaths = ["tests"]
 pythonpath = ["src"]
 ```
+
+## `__init__.py`
+
+```python
+"""TestSimpleCalculatorBx - Simple calculator for packaging demo.
+
+Author: Fabrice Jumel
+License: Unlicense
+"""
+
+from .simple_calculator import SimpleCalculator
+
+__version__ = "0.0.1"
+__all__ = ["SimpleCalculator"]
+```
+
+> [!NOTE]
+> Le fichier `__init__.py` sert à indiquer à Python qu’un dossier constitue un package importable. Il permet également de définir ce que le package expose
+>  publiquement (par exemple en important certaines classes pour simplifier les imports) et de centraliser des informations comme la version.
+> Par le passé, on laissait souvent ce fichier vide uniquement pour signaler que le dossier était un package.
+> Aujourd’hui, la bonne pratique consiste à l’utiliser pour structurer proprement l’API du package, contrôler ce qui est accessible depuis l’extérieur et préparer le projet à une distribution propre (installation via pip, versionnement, etc.).
+
