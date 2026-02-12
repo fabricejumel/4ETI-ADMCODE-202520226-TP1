@@ -10,14 +10,16 @@ Les tests fournis doivent passer **sans modification**.
 
 ## Structure de projet attendue
 
+```
 calculator-project/
 ├─ pyproject.toml
 ├─ src/
-│ └─ calculator/
-│ ├─ init.py
-│ └─ simple_calculator.py # ou calculator.py selon ton choix
+│  └─ calculator/
+│     ├─ __init__.py
+│     └─ simple_calculator.py  # ou calculator.py selon ton choix
 └─ tests/
-└─ test_simple_calculator.py
+   └─ test_simple_calculator.py
+```
 
 
 **Contraintes** :
